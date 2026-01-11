@@ -32,14 +32,36 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         cnt = 0;
     }
+    public boolean isContainSeven(int num) {
+        while (num != 0) {
+            int d = num % 10;
+            if (d == 7) {
+                return true;
+            }
+            num /= 10;
+        }
+        return false;
+    }
 
-    public void clicked(View view) {
+    public String sevenBoom(int num) {
+        String txt = "";
+
+        if (num % 7 == 0) {
+            txt = "BOOM!";
+        }
+        else if (isContainSeven(num) == true) {
+            txt = "BOOM!";
+        }
+        else {
+            txt = "This is a click number: " + num;
+        }
+        return txt;
+    }
+
+
+
+    public void clicked(View view){
         cnt = cnt + 1;
-        if (cnt > 6) {
-            textView.setText("enough to click go to a new start");
-            cnt = 0;
-        } else {
-            textView.setText("this is a clicked number : " + cnt);
+        textView.setText(sevenBoom(cnt));
         }
     }
-}
