@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView textView;
     Button button;
+    int cnt;
 
 
     @Override
@@ -29,9 +30,11 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
         button = findViewById(R.id.button);
+        cnt = 0;
     }
 
     public void clicked(View view){
-        textView.setText("oh yeah iv been clicked");
+        cnt = cnt + 1;
+        textView.setText("this is a clicked number : "+ cnt);
     }
 }
