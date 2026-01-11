@@ -33,8 +33,13 @@ public class MainActivity extends AppCompatActivity {
         cnt = 0;
     }
 
-    public void clicked(View view){
+    public void clicked(View view) {
         cnt = cnt + 1;
-        textView.setText("this is a clicked number : "+ cnt);
+        if (cnt > 6) {
+            textView.setText("enough to click go to a new start");
+            cnt = 0;
+        } else {
+            textView.setText("this is a clicked number : " + cnt);
+        }
     }
 }
